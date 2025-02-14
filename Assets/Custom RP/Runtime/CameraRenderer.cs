@@ -10,6 +10,10 @@ public class CameraRenderer
     private ScriptableRenderContext context;
     private Camera camera;
 
+    private const string bufferName = "Render Camera";
+
+    private CommandBuffer buffer = new CommandBuffer() {name = bufferName};
+
     public void Render(ScriptableRenderContext context, Camera camera)
     {
         this.context = context;
