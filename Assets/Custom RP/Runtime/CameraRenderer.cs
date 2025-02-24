@@ -23,6 +23,9 @@ public partial class CameraRenderer
     {
         this.context = context;
         this.camera = camera;
+        
+        PrepareBuffer();
+        PrepareForSceneWindow();
 
         // 视锥体剔除
         if (!Cull())
@@ -35,6 +38,7 @@ public partial class CameraRenderer
         DrawVisibleGeometry();
         // 绘制不支持的Shader
         DrawUnsupportedShaders();
+        DrawGizmos();
         Submit();
     }
 
