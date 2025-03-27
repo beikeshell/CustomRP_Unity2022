@@ -33,9 +33,9 @@ Material:
     - _Clipping: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DstBlend: 0
-    - _SrcBlend: 1
-    - _ZWrite: 1
+    - _DstBlend: 10
+    - _SrcBlend: 5
+    - _ZWrite: 0
     m_Colors:
     - _BaseColor: {r: 0.011569952, g: 0.17123538, b: 0.49056602, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
