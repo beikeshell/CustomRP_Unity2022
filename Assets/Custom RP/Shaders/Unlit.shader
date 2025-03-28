@@ -2,7 +2,10 @@
 {
     Properties
     {
+        _BaseMap("Texture", 2D) = "white" {}
         _BaseColor("Color", Color) = (1, 1, 1, 1)
+        _Cutoff("Alpha Cutoff", Range(0, 1)) = 0.5
+        [Toggle(_CLIPPING)] _Clipping("Alpha Clipping", Float) = 0
         [Enum(UnityEngine.Rendering.BlendMode)]_SrcBlend("SrcBlend", Float) = 1
         [Enum(UnityEngine.Rendering.BlendMode)]_DstBlend("DstBlend", Float) = 0
         [Enum(Off, 0, On, 1)] _ZWrite("ZWrite", Float) = 1
@@ -18,6 +21,7 @@
             
             HLSLPROGRAM
 
+            #pragma shader_feature _CLIPPING
             #pragma multi_compile_instancing
             #pragma vertex UnlitPassVertex
             #pragma fragment UnlitPassFragment

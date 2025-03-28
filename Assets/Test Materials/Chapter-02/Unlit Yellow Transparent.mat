@@ -11,12 +11,13 @@ Material:
   m_Shader: {fileID: 4800000, guid: bca177db925449979ede1132c69acc26, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _CLIPPING
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -29,9 +30,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Clipping: 0
+    - _Clipping: 1
     - _Cull: 2
-    - _Cutoff: 0.2
+    - _Cutoff: 0.354
     - _DstBlend: 10
     - _SrcBlend: 5
     - _ZWrite: 0
