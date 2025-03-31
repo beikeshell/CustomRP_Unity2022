@@ -19,6 +19,8 @@ public partial class CameraRenderer
 
     private static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit");
     private static ShaderTagId litShaderTagId = new ShaderTagId("CustomLit");
+    
+    Lighting lighting = new Lighting();
 
     public void Render(ScriptableRenderContext context, Camera camera, bool useDynamicBatching, bool useGPUInstancing)
     {
@@ -35,6 +37,8 @@ public partial class CameraRenderer
         }
         
         Setup();
+        // 设置光照
+        lighting.Setup(context, cullingResults);
         // 绘制视锥体内可见的物体
         DrawVisibleGeometry(useDynamicBatching, useGPUInstancing);
         // 绘制不支持的Shader
