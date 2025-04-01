@@ -80,10 +80,6 @@ float4 LitPassFragment(Varyings input) : SV_TARGET
     #endif
     float3 color = GetLighting(surface, brdf);
     return float4(color, surface.alpha);
-
-    return float4(surface.color, surface.alpha);
-    
-    // return base;
 }
 
 #endif

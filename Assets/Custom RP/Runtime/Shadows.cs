@@ -1,3 +1,4 @@
+using System.Text;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering;
@@ -93,6 +94,7 @@ public class Shadows
         buffer.SetViewProjectionMatrices(viewMatrix, projectionMatrix);
         ExecuteBuffer();
         context.DrawShadows(ref shadowSettings);
+        
     }
     
     Vector2 SetTileViewport(int index, int split, int tileSize)
@@ -124,6 +126,7 @@ public class Shadows
     
     Matrix4x4 ConvertToAtlasMatrix(Matrix4x4 m, Vector2 offset, int split)
     {
+        PrintMatrix(m);
         if (SystemInfo.usesReversedZBuffer)
         {
             m.m20 = -m.m20;
@@ -143,4 +146,16 @@ public class Shadows
         
         return m;
     }
+
+    public static void PrintMatrix(Matrix4x4 m)  
+    {  
+        // 打印矩阵的四行  
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine($"| {m.m00}\t{m.m01}\t{m.m02}\t{m.m03} |");  
+        sb.AppendLine($"| {m.m10}\t{m.m11}\t{m.m12}\t{m.m13} |");  
+        sb.AppendLine($"| {m.m20}\t{m.m21}\t{m.m22}\t{m.m23} |");  
+        sb.AppendLine($"| {m.m30}\t{m.m31}\t{m.m32}\t{m.m33} |");  
+        sb.Append("\n");
+        Debug.LogError("Matrix is : \n" + sb.ToString());
+    }  
 }

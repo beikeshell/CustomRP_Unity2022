@@ -26,8 +26,7 @@ int GetDirectionalLightCount()
     return _DirectionalLightCount;
 }
 
-DirectionalShadowData GetDirectionalShadowData(int lightIndex)
-{
+DirectionalShadowData GetDirectionalShadowData (int lightIndex) {
     DirectionalShadowData data;
     data.strength = _DirectionalLightShadowData[lightIndex].x;
     data.tileIndex = _DirectionalLightShadowData[lightIndex].y;

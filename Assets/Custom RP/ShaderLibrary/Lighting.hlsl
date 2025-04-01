@@ -4,11 +4,11 @@
 // #include "Surface.hlsl"
 // #include "Light.hlsl"
 
-float3 IncomingLight(Surface surface, Light light)
-{
-    return saturate(dot(surface.normal, light.direction) * light.attenuation) * light.color;
+float3 IncomingLight (Surface surface, Light light) {
+    return
+        saturate(dot(surface.normal, light.direction) * light.attenuation) *
+        light.color;
 }
-
 float3 GetLighting (Surface surface, BRDF brdf, Light light) {
     return IncomingLight(surface, light) * DirectBRDF(surface, brdf, light);
 }
